@@ -1,7 +1,7 @@
-# Admin Magazine article about Volcano scheduling on Kubernetes
-This repo and Readme contain all the instructions needed to replicate the setup described in the article. Obviously, you can run Volcano on pretty much any cluster you want, but for experimentation purposes the advantages of this approach are that you can create the cluster and install the charts in just a few minutes, destroy them at the end of each working session, and re-run the script to start over again, thereby minimizing your cloud costs.
+# Volcano gang-scheduling on Kubernetes - accompaniment to article in Admin Magazine
+This repo and Readme contain everything needed to replicate the setup described in the article, starting with creating a Kubernetes cluster on Digial Ocean using OpenTofu. If you already have a Kuberne
 
-## Install local tools
+## 1. Install local tools
 On your local Linux workstation: Install [OpenTofu](https://opentofu.org/docs/intro/install/deb/) (the open-source fork of Terraform), [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) (the command-line tool for interacting with a Kubernetes cluster via its API server) and [Helm](https://helm.sh/docs/intro/install/) (a tool for easily installing applications by means of 'charts').
 
 ```
@@ -15,7 +15,7 @@ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scrip
 chmod 700 get_helm.sh
 ./get_helm.sh
 ```
-## Use OpenTofu to create a Kubernetes cluster on Digital Ocean
+## 2. Use OpenTofu to create a Kubernetes cluster on Digital Ocean
 
 Clone this repo to a local directory on your workstation
 
@@ -31,11 +31,11 @@ Check that all the pods are in running state: kubectl get po -A
 
 Install the Helm chart for the Kubernetes Dashboard. This gives us a nice graphical view of the cluster's capacity. The alternative is simply to run kubectl top nodes
 
-## Install the Helm charts for Minio and Volcano, and the rbac needed for Apache Spark on Kubernetes
+## 3. Install the Helm charts for Minio and Volcano, and the rbac needed for Apache Spark on Kubernetes
 
-Add kubernetes-dashboard repository
+Install Minio for Apache Spark's object storage
 ```
-helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard/
+helm -n minio install objectstore oci://registry-1.docker.io/bitnamicharts/minio --create-namespace
 ```
 Deploy a Helm Release named "kubernetes-dashboard" using the kubernetes-dashboard chart
 ```
