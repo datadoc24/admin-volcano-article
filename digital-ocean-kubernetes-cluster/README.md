@@ -1,4 +1,4 @@
-#Creating a Kubernetes cluster on Digital Ocean
+# Creating a Kubernetes cluster on Digital Ocean
 ## 1. Install local tools
 On your local Linux workstation: Install [OpenTofu](https://opentofu.org/docs/intro/install/deb/) (the open-source fork of Terraform), [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) (the command-line tool for interacting with a Kubernetes cluster via its API server) and [Helm](https://helm.sh/docs/intro/install/) (a tool for easily installing applications by means of 'charts').
 ```
