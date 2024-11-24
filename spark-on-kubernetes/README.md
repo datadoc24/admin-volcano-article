@@ -19,4 +19,8 @@ aws-java-sdk-bundle-1.12.262.jar
 ./bin/docker-image-tool.sh -r abesharphpe/spark351 -t 03 build
 Push the image to dockerhub or whatever registry your Kubernetes cluster can access.
 
-You can now run the spark-submit examples referred to in the article.
+Apply spark-rbac.yaml to your cluster. This ensures that your Spakr jobs' driver pods have all the rights they need to create executor pods, access storage and so on.
+```
+kubectl apply -f spark-rbac.yaml
+```
+You can now run the spark-submit examples from the article.
