@@ -1,9 +1,9 @@
-**Build your own version of Apache Spark that include Volcano support and AWS S3 connectivity***
+## Build your own version of Apache Spark that includes Volcano support and AWS S3 connectivity
 
-**Download Spark source code of desired version:  **
+### Download Spark source code of desired version:
 https://spark.apache.org/downloads.html - select package type 'Source code' and extract the download to a local directory. 
 
-**Ensure that Java, R, Python and Make are installed** 
+### Ensure that Java, R, Python and Make are installed
 ```
 sudo apt install r-base-core  
 R --version && python --version && make --version && java --version  
@@ -15,7 +15,7 @@ Build a Spark container image containing the S3 jars as well. S3 connectivity is
 hadoop-aws-3.3.4.jar  
 aws-java-sdk-bundle-1.12.262.jar
 
-**Build a container image with your new Spark**
+### Build a container image with your new Spark
 ./bin/docker-image-tool.sh -r abesharphpe/spark351 -t 03 build
 Push the image to dockerhub or whatever registry your Kubernetes cluster can access.
 
