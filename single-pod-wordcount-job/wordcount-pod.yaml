@@ -9,7 +9,7 @@ spec:
     image: abesharphpe/s3wordcountjob:01
     env:
     - name: S3_BUCKET
-      value: "data"
+      value: "data/events"
     - name: S3_FILENAME
       value: "war-and-peace.txt"
     - name: S3_ENDPOINT_URL
