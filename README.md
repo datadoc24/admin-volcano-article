@@ -1,5 +1,5 @@
 # Volcano gang-scheduling on Kubernetes - accompaniment to Admin Magazine article.
-This repo contains everything needed to replicate the setup described in the article, starting by creating a GPU-enabled Kubernetes cluster on Digital Ocean using OpenTofu. If you already have a Kubernetes cluster, just skip ahead to section 2.
+This repo contains everything needed to replicate the environment and examples in the article, starting by creating a GPU-enabled Kubernetes cluster on Digital Ocean using OpenTofu. The GPUs are optional, and if you already have a Kubernetes cluster, skip ahead to section 2.
 
 ## 1. Creating a test Kubernetes cluster with GPUs, Minio and Volcano.
 
