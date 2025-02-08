@@ -12,7 +12,7 @@ resource "digitalocean_kubernetes_cluster" "mycluster" {
 }
 
 #resource "digitalocean_kubernetes_node_pool" "mygpupool" {
-#  cluster_id = digitalocean_kubernetes_cluster.abetest.id
+#  cluster_id = digitalocean_kubernetes_cluster.mycluster.id
 #
 #  name       = "gpu-pool"
 #  size       = "gpu-h100x1-80gb"
