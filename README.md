@@ -3,7 +3,7 @@ This repo contains everything needed to replicate the setup described in the art
 
 ## 1. Creating a test Kubernetes cluster with GPUs, Minio and Volcano.
 
-See the 'digital-ocean-kubernetes-cluster' directory and its README file. Obviously, there are loads of ways to create a Kubernetes cluster; in this case, because I needed access to GPU hosts while wanting to minimize costs, I used a terraform-based approach to store my entire setup 'as code' and only deploy it when actively working on it, and it's been effective both for this and other projects.
+See the (digital-ocean-kubernetes-cluster) directory and its README file. Obviously, there are loads of ways to create a Kubernetes cluster; in this case, because I needed access to GPU hosts while wanting to minimize costs, I used a terraform-based approach to store my entire setup 'as code' and only deploy it when actively working on it, and it's been effective both for this and other projects.
 
 ## 2. The single-pod wordcount job
 
