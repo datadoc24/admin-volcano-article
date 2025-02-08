@@ -11,9 +11,10 @@ See the 'single-pod-wordcount-job' directory. If you like, build your own image 
 
 ## 3. Building Apache Spark to work with Kubernetes and Volcano
 
-See the 'spark-on-kubernetes' directory and its README file. This example is somewhat involved because the pre-compiled Spark binaries don't support Volcano scheduler, therefore you need to build your own.
+See the 'spark-on-kubernetes' directory and its README file. This example is somewhat involved because the pre-compiled Spark binaries don't support Volcano scheduler - that's why you have to go through the process of building your own Spark.
 
 Run a test spark job. The K8S cluster in the TF script (1 master, 2 x 4cpu/8GB workers) has plenty of capacity to run this test job, and just enough capacity to run 2 simultaneous instances of it; so we can easily contrive a situation where the cluster has no capacity for new jobs, and see the scheduling lock scenario
 
 ## 4. The example Pytorch DDP (Distributed Data Parallel) job
-See the 'kubeflow-training-operator' directory. This example is a lightly-modified version of the example at [https://www.kubeflow.org/docs/components/training/getting-started/] in which we use Python threads to create several jobs simultaneously. When Volcano is not deployed in the cluster we see scheduling lock, with partial deployment of 2 jobs at once, and when Volcano is deployed, we see that the training operator works with volcano to create the one by one.
+
+See the 'kubeflow-training-operator' directory; also, check the [https://www.kubeflow.org/docs/components/training/getting-started/](prerequisites) for your local Python environment. This example is a lightly-modified version of the example at [https://www.kubeflow.org/docs/components/training/getting-started/] in which we use Python threads to create several jobs simultaneously. When Volcano is not deployed in the cluster we see scheduling lock, with partial deployment of 2 jobs at once, and when Volcano is deployed, we see that the training operator works with volcano to create the one by one. The 'PyTorch' section of the article shows how to run the examples given here.
