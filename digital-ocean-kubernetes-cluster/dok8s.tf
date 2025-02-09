@@ -11,13 +11,13 @@ resource "digitalocean_kubernetes_cluster" "mycluster" {
   
 }
 
-#resource "digitalocean_kubernetes_node_pool" "mygpupool" {
+#resource "digitalocean_kubernetes_node_pool" "gpupool" {
 #  cluster_id = digitalocean_kubernetes_cluster.mycluster.id
 #
 #  name       = "gpu-pool"
 #  size       = "gpu-h100x1-80gb"
 #  node_count = 2
-#  tags       = ["mygpupool"]
+#  tags       = ["gpupool"]
 #}
 
 output "clusterid" {
